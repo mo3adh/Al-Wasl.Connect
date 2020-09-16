@@ -1,5 +1,5 @@
 applications:
-- name: beirut
+- name: Beirut
 memory: 256M
 host: beirut_host
 instances: 1
