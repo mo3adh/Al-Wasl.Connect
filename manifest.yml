@@ -1,7 +1,7 @@
 applications:
-- name: mycallsda
+- name: beirut
 memory: 256M
-host: mycallsda
+host: beirut_host
 instances: 1
 disk_quota: 512M
 buildpack: sdk-for-nodejs
