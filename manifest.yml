@@ -1,7 +1,7 @@
 applications:
 - name: mo3adh_frontend
-memory: 0M
+memory: 256M
 host: mo3adh_frontend
 instances: 1
-disk_quota: 0M
+disk_quota: 512M
 buildpack: sdk-for-nodejs
