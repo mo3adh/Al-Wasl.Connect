@@ -1,7 +1,7 @@
 applications:
-- name: beirut_app
+- name: mo3adh_backend
 memory: 256M
-host: beirut_host
+host: mo3adh_backend
 instances: 1
-disk_quota: 256M
+disk_quota: 512M
 buildpack: sdk-for-nodejs
