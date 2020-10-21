@@ -2502,7 +2502,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    NODE_HOST: 'https://mycallsda.au-syd.mybluemix.net'
+    NODE_HOST: 'https://mo3adh_backend.eu-gb.mybluemix.net'
 };
 
 
