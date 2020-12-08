@@ -1,7 +1,7 @@
 applications:
-- name: mo3adh
+- name: mo3adh1
 memory: 256M
-host: mo3adh
+host: mo3adh1
 instances: 1
 disk_quota: 512M
 buildpack: sdk-for-nodejs
