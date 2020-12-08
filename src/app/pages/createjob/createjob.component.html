@@ -1,0 +1,60 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form validate (ngSubmit)='showName()'>
+                <h1>Please fill this form</h1>
+                <hr>
+                <label><b>Full Name</b></label>
+                <input type="text" required name="name" [(ngModel)]='jobRequest.fullName' id="name">
+                <label><b>National Identity Number </b></label>
+                <input type="National Identity Number " required [(ngModel)]='jobRequest.id' name="id">
+                <label><b>Email</b></label>
+                <input type="email" required [(ngModel)]='jobRequest.email' name="email">
+                <label><b>Phone Number</b></label>
+                <input type="tel" required [(ngModel)]='jobRequest.phone' name="phone">
+                <label><b>last job</b></label>
+                <select [(ngModel)]='jobRequest.career' name="career">
+                    <option value="Accountant">Accountant</option>
+                    <option value="Bookkeeper">Bookkeeper</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Computer engineer">Computer engineer</option>
+                    <option value="Electrical engineer">Electrical engineer</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <label><b>Location</b></label>
+                <input type="text" required [(ngModel)]='jobRequest.address' name="address">
+                <label style="margin-right: 5px;"><b>Birth date</b></label>
+                <div style="clear: both;"></div>
+                <div style="float: left;"><input type="date" [(ngModel)]='jobRequest.bDate' name="date"></div>
+                <br>
+                <div style="clear: both;"></div>
+                <div id="cid_304" class="form-input-wide">
+                    <div id="text_304" class="form-html" data-component="text">
+                        <p><span style="font-size: 18pt;"><strong>Job Skills &amp; Experience</strong></span></p>
+                    </div>
+                    </div>
+                <br>
+                    <label  style="font-size:1.5vw ">
+                    Describe your skills:
+                    <span >
+                        
+                    </span>
+                    </label>
+                <br>
+                    <div >
+                    <textarea  name="textarea" cols="70" rows="6" data-component="textarea" name="desc" [(ngModel)]='jobRequest.skills'></textarea>
+                    </div>
+                <hr>
+                <button type="submit" class="donatebtn" style="font-size: 20px;">Apply</button>
+            </form>
+            <!-- <form>
+                <input type="text" [(ngModel)]="name" name="name">
+                <h1>{{name}}</h1>
+                <button (click) ="showName()">Click Me</button>
+            </form> -->
+            
+        </div>
+    </div>
+</div>

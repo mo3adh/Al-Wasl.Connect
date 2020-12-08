@@ -23,6 +23,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DonorComponent } from './pages/donor/donor.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CreatejobComponent } from './pages/createjob/createjob.component';
+import { ShowjobsComponent } from './pages/showjobs/showjobs.component';
+import { JobitemComponent } from './pages/jobitem/jobitem.component';
+import { IndivisualComponent } from './pages/indivisual/indivisual.component';
+import { HonorwallComponent } from './pages/honorwall/honorwall.component';
 
 
 @NgModule({
@@ -32,7 +37,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     LoginComponent,
     RegisterComponent,
     DonorComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CreatejobComponent,
+    ShowjobsComponent,
+    JobitemComponent,
+    IndivisualComponent,
+    HonorwallComponent,
   ],
   imports: [
     BrowserAnimationsModule,
