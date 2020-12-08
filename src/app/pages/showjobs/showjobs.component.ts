@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from 'app/models/job_request';
 
 @Component({
   selector: 'app-showjobs',
@@ -9,7 +8,6 @@ import { Job } from 'app/models/job_request';
 export class ShowjobsComponent implements OnInit {
 
   constructor() { }
-
 
   ngOnInit(): void {
   }
