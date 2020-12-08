@@ -848,6 +848,112 @@ app.get("/getMonthlyRequestForGovernment",function(request,response){
   });
     
 });
+
+app.get("/getJobs",function(request,response){
+  ibmdb.open(connStr, function (err, conn) {
+    if (err) {
+      console.log(err);
+    } else {
+      conn.query(`  SELECT *
+    FROM REQUESTS `, function (err, data) {
+      if (err){
+        return response.json({success:-2, message:err});
+      }
+      else{
+        conn.close(function () {
+          return response.json({
+            success: 1,
+            message: "Data Received!",
+            data: data,
+          });
+        });
+      }
+  });
+    }
+  });
+    
+});
+
+app.get("/getDonations",function(request,response){
+  ibmdb.open(connStr, function (err, conn) {
+    if (err) {
+      console.log(err);
+    } else {
+      conn.query(`  SELECT *
+    FROM DONATIONS `, function (err, data) {
+      if (err){
+        return response.json({success:-2, message:err});
+      }
+      else{
+        conn.close(function () {
+          return response.json({
+            success: 1,
+            message: "Data Received!",
+            data: data,
+          });
+        });
+      }
+  });
+    }
+  });
+    
+});
+
+app.post("/addJob",function (request,response){
+  let job = request.body;
+  ibmdb.open(connStr, function (err, conn) {
+    if (err) {
+      console.log(err);
+    } else {
+      conn.query(
+        `INSERT INTO ${process.env.DB_SCHEMA+".REQUESTS"} (ID, Name, Email, Phone, Career, Address, Birthdate, Skills)
+         VALUES (${job.ID}, ${job.name}, ${job.email}, ${job.phone}, ${job.career}, 
+                ${job.address}, ${job.bDate}, ${job.skills})`,
+        function (err, data) {
+          if (err) {
+            return response.json({ success: -2, message: err });
+          } else {
+            conn.close(function () {
+              return response.json({
+                success: 1,
+                message: "Data Received!",
+                data: data,
+              });
+            })
+          }
+        }
+      );
+    }
+  });
+})
+
+app.post("/addDonation",function (request,response){
+  let donation = request.body;
+  ibmdb.open(connStr, function (err, conn) {
+    if (err) {
+      console.log(err);
+    } else {
+      conn.query(
+        `INSERT INTO ${process.env.DB_SCHEMA+".DONATIONS"} (ID, NAME, EMAIL, PHONE, AMMOUNT)
+         VALUES (${donation.ID}, ${donation.name}, ${donation.email}, ${donation.phone}, ${donation.ammount})`, 
+        function (err, data) {
+          if (err) {
+            return response.json({ success: -2, message: err });
+          } else {
+            conn.close(function () {
+              return response.json({
+                success: 1,
+                message: "Data Received!",
+                data: data,
+              });
+            })
+          }
+        }
+      );
+    }
+  });
+})
+
 //  let NGOId = request.body.NGOId;
 //     conn.query("SELECT * FROM "+process.env.DB_SCHEMA+".TRANSACTION where ID ="+NGOId+";", function (err, data) {
 //       if (err){
