@@ -1,15 +1,14 @@
 <div class="container">
-    <div class="h-title"><h1>User Application Info</h1></div>
-  <form action="/action_page.php">
+  <form>
     <label><b>Full Name</b></label>
-    <input type="text" value="Ahmed Ali Abdullah">
+    <input type="text" value="{{job.NAME}}">
     <label><b>Location</b></label>
-    <input type="text" value="24 Airport Street, Beirut">
+    <input type="text" value="{{job.ADDRESS}}">
     <label><b>Last Job</b></label>
-    <input type="text" value="Driver">
+    <input type="text" value="{{job.CAREER}}">
     <label><b>Email</b></label>
-    <input type="email" value="ahmedali@gmail.com">
+    <input type="email" value="{{job.EMAIL}}">
     <label><b>Phone Number</b></label>
-    <input type="tel" value="+9619854662">
+    <input type="tel" value="{{job.PHONE}}">
   </form>
 </div>

@@ -1,6 +1,6 @@
 export class Donation {
-    fullName:String;
-    id:number;
+    name:String;
+    ID:number;
     email:String;
     phone:Number;
     ammount:number;

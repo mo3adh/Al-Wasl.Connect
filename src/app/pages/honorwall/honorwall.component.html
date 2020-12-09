@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="glow">
+    <h1 class="glow" style="margin-top: 50px; margin-bottom: 50px;">
       Honor Wall 
     </h1>
     <div class="h-quotes">
@@ -14,9 +14,10 @@
         <th>Name</th>
         <th>Donations</th>
       </tr>
-        <tr>
-        <td>name</td>
-        <td>ammount $</td>
+        <tr *ngFor='let donation of donations'>
+          <td>{{ donation.NAME }}</td>
+          <td>{{ donation.AMMOUNT }}</td>
         </tr>
+        
     </table>
   </div>

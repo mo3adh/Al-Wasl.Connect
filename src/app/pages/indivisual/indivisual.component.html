@@ -1,10 +1,10 @@
 <div class="container">
     <div class="h-title"><h1>supplies support</h1></div>
-  <form (ngSubmit)='showName()'>
+  <form (ngSubmit)='onsubmit()'>
     <h1>Please fill this form</h1>
     <hr>
     <label><b>Name</b></label>
-    <input type="text" required name="name" [(ngModel)]='donation.fullName'>
+    <input type="text" required name="name" [(ngModel)]='donation.name'>
     <label><b>Email</b></label>
     <input type="email" required name="email" [(ngModel)]='donation.email'>
     <label><b>Phone Number</b></label>

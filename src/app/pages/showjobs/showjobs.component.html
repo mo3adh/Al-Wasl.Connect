@@ -1,1 +1,8 @@
-<app-jobitem></app-jobitem>
+<h1 class="h-title">User Applications Info</h1>
+<div *ngFor='let job of jobs'>
+    <li>
+        <app-jobitem [job] = 'job'></app-jobitem>
+    </li>
+    
+</div>
+

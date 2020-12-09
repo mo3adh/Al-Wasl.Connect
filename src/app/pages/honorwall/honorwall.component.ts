@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Donation } from 'app/models/donation';
+import { HttpService } from "../../http.service";
+
 
 @Component({
   selector: 'app-honorwall',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HonorwallComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpService:HttpService) { }
+  donations:Donation[];
 
   ngOnInit(): void {
+    this.httpService.getDonations().subscribe((results) => {
+      this.donations = results['data'];
+    });
   }
 
 }

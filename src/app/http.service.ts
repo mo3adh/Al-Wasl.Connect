@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Observable } from "rxjs";
+import { Job } from './models/job_request';
+import { Donation } from './models/donation';
 
 @Injectable({
   providedIn: 'root'
@@ -139,5 +142,22 @@ getNGOCapacityForGovernment(){
 
   getMonthlyRequestForGovernment(){
     return this.http.get(environment.NODE_HOST + '/getMonthlyRequestForGovernment', this.httpOptions);
+  }
+
+  getJobs():Observable<Job[]> {
+    return this.http.get<Job[]>(environment.NODE_HOST + '/getJobs', this.httpOptions);
+  }
+
+  getDonations():Observable<Donation[]> {
+    return this.http.get<Donation[]>(environment.NODE_HOST + '/getDonations', this.httpOptions);
+  }
+
+
+  createJobRequest(job:Job):Observable<Job> {
+    return this.http.post<Job>(environment.NODE_HOST + '/addJob', job, this.httpOptions);
+  }
+
+  createDonation(donation:Donation):Observable<Donation> {
+    return this.http.post<Donation>(environment.NODE_HOST + '/addDonation', donation, this.httpOptions);
   }
 }
