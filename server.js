@@ -849,6 +849,8 @@ app.get("/getMonthlyRequestForGovernment",function(request,response){
     
 });
 
+ /* Our Part ******************************/
+
 app.get("/getJobs",function(request,response){
   ibmdb.open(connStr, function (err, conn) {
     if (err) {
@@ -953,6 +955,8 @@ app.post("/addDonation",function (request,response){
     }
   });
 })
+
+/* End ***********************************/
 
 //  let NGOId = request.body.NGOId;
 //     conn.query("SELECT * FROM "+process.env.DB_SCHEMA+".TRANSACTION where ID ="+NGOId+";", function (err, data) {
